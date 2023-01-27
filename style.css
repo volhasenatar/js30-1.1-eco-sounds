@@ -1,0 +1,122 @@
+* {
+  margin: 0px;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+  background: black;
+  color: white;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 20px;
+}
+/* HEADER */
+.header-container {
+  display: flex;
+  justify-content: end;
+  padding: 5px 20px;
+}
+.logo {
+  width: 50px;
+  background-image: url(svg/favicon.ico);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0 20px;
+}
+.logo:hover {
+  filter: brightness(0.85);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.nav {
+  margin-left: auto;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  list-style: none;
+}
+.nav-item {
+  padding: 0 20px;
+}
+.nav-item:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.nav-item.active {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}
+/* MAIN */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+  min-height: 280px;
+  background-image: url('img/forest.jpg');
+  background-size: cover;
+}
+button {
+  width: 160px;
+  height: 160px;
+  background-image: url('svg/play.svg');
+  background-size: contain;
+  background-color: transparent;
+  border: 0;
+  transition: 0.3s;
+}
+button:focus {
+  border: 0;
+}
+button:hover {
+  filter: brightness(0.85);
+}
+.pause {
+  background-image: url('svg/pause.svg');
+}
+
+/* FOOTER */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 40px);
+  max-width: 1440px;
+  margin-left: 20px;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+.footer-data {
+  display: flex;
+  align-items: center;
+}
+.copyright {
+  padding-right: 20px;
+}
+.github-username {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 20px;
+  transition: 0.3s;
+}
+.github-username:hover {
+  color: #bdae82;
+}
+.rss-logo {
+  width: 135px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('svg/rss.svg');
+  transition: 0.3s;
+  margin-right: 20px;
+}
+.rss-logo:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}
