@@ -66,15 +66,10 @@ active[4].addEventListener('click', () => {
 });
 
 active.forEach((element) => {
-  if (element) {
-    element.onclick = function () {
-      active.forEach((element) => {
-        element.classList.remove('active');
-        console.log('1 click');
-      });
-
-      element.classList.add('active');
-      console.log('2 click');
-    };
-  }
+  element.onclick = () => {
+    active.forEach((element) => {
+      element.classList.remove('active');
+    });
+    element.classList.add('active');
+  };
 });
