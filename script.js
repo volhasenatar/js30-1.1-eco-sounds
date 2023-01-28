@@ -65,9 +65,16 @@ active[4].addEventListener('click', () => {
   main.style.backgroundImage = imageArray[4];
 });
 
-for (i = 0; i < active.length; i++)
-  active[i].onclick = function () {
-    this.classList.add('active');
-  };
+active.forEach((element) => {
+  if (element) {
+    element.onclick = function () {
+      active.forEach((element) => {
+        element.classList.remove('active');
+        console.log('1 click');
+      });
 
-// если при нажатии 1  из li актиыируется активный класс. то остальные автоматически не имеют активный класс
+      element.classList.add('active');
+      console.log('2 click');
+    };
+  }
+});
