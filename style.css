@@ -29,14 +29,11 @@ body {
   width: inherit;
   justify-content: space-between;
 }
-li {
-  font-size: larger;
+.nav ul:first-child li {
+  height: inherit;
 }
 .logo {
-  background-image: url(svg/favicon.ico);
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 0 20px;
+  height: inherit;
 }
 .nav-item:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
