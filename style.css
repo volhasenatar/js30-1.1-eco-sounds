@@ -9,36 +9,33 @@ body {
 }
 .container {
   max-width: 1440px;
-  margin: 0 20px;
 }
 /* HEADER */
 .header-container {
   display: flex;
-  justify-content: end;
   padding: 5px 20px;
 }
-.logo {
-  width: 50px;
-  background-image: url(svg/favicon.ico);
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 0 20px;
-}
-.logo:hover {
-  filter: brightness(0.85);
-  transition: 0.3s;
-  cursor: pointer;
-}
+
 .nav {
-  margin-left: auto;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 .nav-list {
   display: flex;
   align-items: center;
   height: 50px;
   list-style: none;
+  width: inherit;
+  justify-content: space-between;
 }
-.nav-item {
+li {
+  font-size: larger;
+}
+.logo {
+  background-image: url(svg/favicon.ico);
+  background-size: contain;
+  background-repeat: no-repeat;
   padding: 0 20px;
 }
 .nav-item:hover {

@@ -1,19 +1,15 @@
 const button = document.querySelector('button');
-const playForest = document.querySelector('.play');
 const main = document.querySelector('.main');
 const active = document.querySelectorAll('li');
 
 const imageArray = [
+  'url(img/forest.jpg)',
   'url(img/solovey.jpg)',
   'url(img/zarynka.jpg)',
   'url(img/javoronok.jpg)',
   'url(img/slavka.jpg)',
   'url(img/drozd.jpg)',
 ];
-
-document.querySelector('.logo').addEventListener('click', () => {
-  window.location.reload();
-});
 
 const audio = new Audio();
 const playlist = new Array(
@@ -27,49 +23,31 @@ const playlist = new Array(
 
 function playMusic() {
   if (audio.paused === true) {
-    audio.src = playlist[0];
     audio.play();
-    audio.currentTime = 0;
+    button.classList.add('pause');
   } else {
     audio.pause();
+    button.classList.remove('pause');
   }
 }
-function toggleBtn() {
-  button.classList.toggle('pause');
+
+function changeIndex(index) {
+  main.style.backgroundImage = imageArray[index];
+  audio.src = playlist[index];
+  playMusic();
 }
 
-playForest.addEventListener('click', playMusic);
-button.addEventListener('click', toggleBtn);
+function changeActiveLinks(element) {
+  active.forEach((element) => {
+    element.classList.remove('active');
+  });
+  element.classList.add('active');
+}
+button.addEventListener('click', playMusic);
 
-//solovey
-active[0].addEventListener('click', () => {
-  main.style.backgroundImage = imageArray[0];
-});
-//zarynka
-active[1].addEventListener('click', () => {
-  main.style.backgroundImage = imageArray[1];
-});
-
-//javoronok
-active[2].addEventListener('click', () => {
-  main.style.backgroundImage = imageArray[2];
-});
-
-//slavka
-active[3].addEventListener('click', () => {
-  main.style.backgroundImage = imageArray[3];
-});
-
-//drozd
-active[4].addEventListener('click', () => {
-  main.style.backgroundImage = imageArray[4];
-});
-
-active.forEach((element) => {
+active.forEach(function (element, index) {
   element.onclick = () => {
-    active.forEach((element) => {
-      element.classList.remove('active');
-    });
-    element.classList.add('active');
+    changeIndex(index);
+    changeActiveLinks(element);
   };
 });
